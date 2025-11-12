@@ -22,19 +22,14 @@ public class BookPersonRoles {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @Transient
     @Relation(value = Relation.Kind.MANY_TO_ONE)
     @MapsId("personId")
     @JoinColumn(name = "person_id", referencedColumnName = "id")
-    // добавить(при удалении @MapsId, @JoinColumn) @MappedProperty("person_id")
-    // @MappedProperty("person_id")
     private Person person;
 
-    @Transient
     @Relation(value = Relation.Kind.MANY_TO_ONE)
     @MapsId("book_id")
     @JoinColumn(name = "book_id", referencedColumnName = "id")
-    // добавить(при удалении @MapsId, @JoinColumn) @MappedProperty("book_id")
     private Book book;
 
     public BookPersonRoles() {}
