@@ -1,0 +1,17 @@
+rsql:
+  sql:
+    dialect: POSTGRES
+  fulltext:
+    language: RUSSIAN
+  naming:
+    target: SNAKE
+
+r2dbc:
+  datasources:
+    default:
+      dialect: postgres
+      db-type: postgresql
+      url: r2dbc:postgresql://localhost:5432/books-authors?allowMultiQueries=true
+      username: postgres
+      password: postgres
+
